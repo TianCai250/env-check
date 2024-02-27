@@ -35,7 +35,8 @@ function initUnderline(context) {
   // 创建一个装饰类型，用于模拟波浪线效果
   const lineDecorationType = vscode.window.createTextEditorDecorationType({
     isWholeLine: false, // 只应用于匹配的文本，而不是整行
-    textDecoration: "underline", // VSCode 不支持波浪线装饰，所以这里不使用
+    // textDecoration: "underline", 
+    backgroundColor: '#f56c6c50', 
   });
 
   // 监听文档内容改变事件
