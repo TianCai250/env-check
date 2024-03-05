@@ -35,14 +35,20 @@ function initUnderline(context) {
   // 创建一个装饰类型，用于模拟波浪线效果
   const lineDecorationType = vscode.window.createTextEditorDecorationType({
     isWholeLine: false, // 只应用于匹配的文本，而不是整行
-    // textDecoration: "underline", 
-    backgroundColor: '#f56c6c50', 
+    // textDecoration: "underline",
+    backgroundColor: "#f56c6c50",
   });
 
   // 监听文档内容改变事件
   context.subscriptions.push(
     vscode.workspace.onDidChangeTextDocument((event) => {
-      updateDecorations(event.document, lineDecorationType);
+      if (
+        fileCheckNames.some((item) =>
+        vscode.window.activeTextEditor.document.fileName.toLowerCase().endsWith(item)
+        )
+      ) {
+        updateDecorations(event.document, lineDecorationType);
+      }
     })
   );
 

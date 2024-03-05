@@ -8,7 +8,7 @@
         "正式环境",
         "检查"
     ],
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "wangluo",
     "engines": {
         "vscode": "^1.86.0"
